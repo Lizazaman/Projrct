@@ -4,13 +4,13 @@ import os
 FILENAME = "soil_nutrients.txt"
 
 def initialize_file():
-    """Initialize the file if it does not exist."""
+    
     if not os.path.exists(FILENAME):
         with open(FILENAME, "w") as file:
             pass
 
 def add_nutrient():
-    """Add a new nutrient record."""
+    
     crop_name = input("Enter crop name: ").strip()
     nitrogen = input("Enter nitrogen requirement (kg/ha): ").strip()
     phosphorus = input("Enter phosphorus requirement (kg/ha): ").strip()
@@ -21,7 +21,7 @@ def add_nutrient():
     print("Nutrient record added successfully!")
 
 def show_nutrients():
-    """Display all nutrient records."""
+    
     try:
         with open(FILENAME, "r") as file:
             lines = file.readlines()
@@ -37,7 +37,7 @@ def show_nutrients():
         print("No data file found! Please add a record first.")
 
 def search_nutrient():
-    """Search for a nutrient record."""
+    
     crop_name = input("Enter the crop name to search: ").strip().lower()
     found = False
 
@@ -55,7 +55,7 @@ def search_nutrient():
         print("No data file found! Please add a record first.")
 
 def edit_nutrient():
-    """Edit an existing nutrient record."""
+    
     crop_name = input("Enter the crop name to edit: ").strip().lower()
     found = False
     updated_records = []
@@ -84,7 +84,7 @@ def edit_nutrient():
         print("No data file found! Please add a record first.")
 
 def delete_nutrient():
-    """Delete a nutrient record."""
+    
     crop_name = input("Enter the crop name to delete: ").strip().lower()
     found = False
     updated_records = []
@@ -109,7 +109,7 @@ def delete_nutrient():
         print("No data file found! Please add a record first.")
 
 def menu():
-    """Display menu and handle user choices."""
+
     while True:
         print("\nSoil Nutrient Management System")
         print("1. Add Nutrient Record")
